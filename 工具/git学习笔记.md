@@ -81,14 +81,33 @@ git push origin master
 18. 管理远程库
 git remote -v
 查看当前远程库的信息
+
 git remote rm origin
 删除别名为origin的远程仓库（删除的是绑定关系）
+
 git remote add gitrepo git@github.com:wzgith/study.git
 关联远程库
 
-管理本地master与远程master？
+git remote set-url origin git@github.com:wzgith/study.git
+修改本地关联的远程地址（或者先删除，后添加）
 
 19. 从远程库克隆
 git clone git@github.com:wzgith/study.git
 
-20. 
+20. 分支管理
+git branch
+查看现有分支
+
+git branch dev
+新建分支dev
+
+git switch dev
+切换到分支dev（旧版本git不支持switch命令，切换分支使用git checkout dev）
+
+git merger dev
+将分支dev提交的修改合并到master（在master分支下执行该命令）
+
+git branch -d dev
+删除分支dev
+
+21. 解决冲突
