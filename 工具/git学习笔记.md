@@ -110,4 +110,38 @@ git merger dev
 git branch -d dev
 删除分支dev
 
+git branch -D <name>
+强行删除一个未合并的分支
+
+git cherry-pick 4c805e2
+复制一个提交到当前分支
+
 21. 解决冲突
+解决方式和svn一样，删除掉冲突的内容，在进行提交
+
+22. git分支合并分支
+普通的合并会丢失分支信息，采用一下命令可以保留分支信息
+git merge --no-ff -m "merge with no-ff" dev
+
+23. 工作区间存储功能
+git stash：命令可以将当前工作区间未提交的内容存储起来
+git stash lish:查看当前存储的工作区间
+git stash apply:恢复stash内容
+git stash drop:删除stash内容
+git stash pop:恢复stash内容，同时把stash内容删掉
+
+24. 推送分支
+git push origin master:将master分支推送到远程
+git push origin dev:将dev分支推送到远程
+git checkout -b dev origin/dev：将远程的dev分支下拉到本地
+git pull:把跟新本低仓库
+
+25. git标签
+git tag v1.0：创建标签v1.0
+git tag:查看标签
+git tag v0.9 f52c633：在某一版本打上标签
+git show v0.9:查看标签v0.9详细信息
+git tag -d v0.9:删除某一标签
+git push origin v0.9:将标签推送到远程
+git push origin --tags:将所有标签一次性推送到远程
+标签的作用：在某次提交打上tag，以后根据tag信息就能找到该次提交的版本号
